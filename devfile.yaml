@@ -22,6 +22,17 @@ parent:
   id: java-quarkus
   registryUrl: 'https://registry.devfile.io'
 components:
+  - name: dev-tooling
+    container:
+      image: http://quay.io/jnyilimbibi/devspaces-extended-udi:3.12g
+      endpoints:
+        - name: http-3100
+          targetPort: 3100
+      cpuLimit: '4'
+      cpuRequest: '0'
+      memoryLimit: 8G
+      memoryRequest: 8G
+      mountSources: true
   - name: image-build
     image:
       imageName: java-quarkus-image:latest
